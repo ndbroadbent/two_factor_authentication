@@ -8,6 +8,13 @@ module Devise
         ::Devise::Models.config(self, :login_code_random_pattern, :max_login_attempts)
       end
 
+      def two_factor_authentication!
+        code = generate_two_factor_code
+        self.second_factor_pass_code = Digest::MD5.hexdigest(code)
+        save
+        send_two_factor_authentication_code(code)
+      end
+
       def need_two_factor_authentication?(request)
         true
       end
