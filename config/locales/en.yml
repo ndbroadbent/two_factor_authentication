@@ -1,4 +1,4 @@
 en:
   devise:
     two_factor_authentication:
-      attempt_failed: "Attempt failed"
+      attempt_failed: "Code was incorrect! Please try again."
