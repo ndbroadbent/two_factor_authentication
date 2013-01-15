@@ -2,3 +2,4 @@ en:
   devise:
     two_factor_authentication:
       attempt_failed: "Code was incorrect! Please try again."
+      attempt_failed_signed_out: "Code was incorrect! You have been signed out."
