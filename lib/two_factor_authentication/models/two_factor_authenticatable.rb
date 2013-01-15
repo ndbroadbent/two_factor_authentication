@@ -33,6 +33,7 @@ module Devise
 
         self.second_factor_mobile = pending_mobile
         self.second_factor_active = true
+        self.second_factor_dismissed = true
         save!
       end
 
