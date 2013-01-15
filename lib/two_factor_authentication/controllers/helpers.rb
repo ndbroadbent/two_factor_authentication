@@ -10,6 +10,7 @@ module TwoFactorAuthentication
       private
 
       def handle_two_factor_authentication
+        return unless warden
         if not request.format.nil? and request.format.html? and not devise_controller?
           Devise.mappings.keys.flatten.any? do |scope|
             if signed_in?(scope) and warden.session(scope)[:need_two_factor_authentication]
